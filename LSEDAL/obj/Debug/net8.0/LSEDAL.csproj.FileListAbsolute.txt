@@ -1,0 +1,12 @@
+/Users/gaurishankarpandey/LSEProject/LSEDAL/bin/Debug/net8.0/LSEDAL.deps.json
+/Users/gaurishankarpandey/LSEProject/LSEDAL/bin/Debug/net8.0/LSEDAL.dll
+/Users/gaurishankarpandey/LSEProject/LSEDAL/bin/Debug/net8.0/LSEDAL.pdb
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.csproj.AssemblyReference.cache
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.AssemblyInfoInputs.cache
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.AssemblyInfo.cs
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.csproj.CoreCompileInputs.cache
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.dll
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/refint/LSEDAL.dll
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.pdb
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/ref/LSEDAL.dll
