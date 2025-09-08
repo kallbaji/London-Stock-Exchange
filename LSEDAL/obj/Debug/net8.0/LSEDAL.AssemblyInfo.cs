@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ca85e608269223dd791296a0543fe704a3056cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c55ec9158665a39ff2065f528adea88ccd4d442")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
