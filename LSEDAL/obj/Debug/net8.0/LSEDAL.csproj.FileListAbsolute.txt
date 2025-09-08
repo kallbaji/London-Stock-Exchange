@@ -10,3 +10,4 @@
 /Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/refint/LSEDAL.dll
 /Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.pdb
 /Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/ref/LSEDAL.dll
+/Users/gaurishankarpandey/LSEProject/LSEDAL/obj/Debug/net8.0/LSEDAL.sourcelink.json

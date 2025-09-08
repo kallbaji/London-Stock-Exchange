@@ -1,8 +1,57 @@
 {
-   
-    "version": "9.0.34",
+    "version": "0.2.0",
     "configurations": [
 
-
+        {
+            "name": "LSEGetAllAPI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/LSEGetAllAPI/bin/Debug/net8.0/LSEGetAllAPI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LSEGetAllAPI",
+            "stopAtEntry": false
+        },
+        {
+            "name": "LSEGETAPI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/LSEGETAPI/bin/Debug/net8.0/LSEGETAPI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LSEGETAPI",
+            "stopAtEntry": false
+        },
+        {
+            "name": "LSEGETSUBSETAPI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/LSEGETSUBSETAPI/bin/Debug/net8.0/LSEGETSUBSETAPI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LSEGETSUBSETAPI",
+            "stopAtEntry": false
+        },
+        {
+            "name": "LSEProject",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/LSEProject/bin/Debug/net8.0/LSEProject.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LSEProject",
+            "stopAtEntry": false
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Launch All Projects",
+            "configurations": [
+                "LSEGetAllAPI",
+                "LSEGETAPI",
+                "LSEGETSUBSETAPI",
+                "LSEProject"
+            ]
+        }
     ]
 }
