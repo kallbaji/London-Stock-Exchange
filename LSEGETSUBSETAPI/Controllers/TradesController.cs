@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 namespace LSETradeApi.Controllers
 {
     [ApiController]
@@ -9,9 +10,12 @@ namespace LSETradeApi.Controllers
     {
         private readonly AppDbContext _context;
 
-        public TradesController(AppDbContext context)
+        private readonly IDistributedCache _cache;
+
+        public TradesController(AppDbContext context, IDistributedCache cache)
         {
             _context = context;
+            _cache = cache;
         }
 
         
@@ -27,6 +31,13 @@ namespace LSETradeApi.Controllers
             {
                 return BadRequest(new { status = "error", message = "Invalid ticker list" });
             }
+            var cacheKey = $"ValuesByTickers_{string.Join(",", request.Tickers)}";
+            var cachedResult = await _cache.GetStringAsync(cacheKey);
+            if (cachedResult != null)
+            {
+                return Ok(cachedResult);
+            }   
+
             var result = await _context.lsetable
                 .Where(t => request.Tickers.Contains(t.tickersymbol))
                 .GroupBy(t => t.tickersymbol)
@@ -37,7 +48,10 @@ namespace LSETradeApi.Controllers
                 })
                 .ToListAsync();
 
-            return Ok(result);
+            var jsonResult = System.Text.Json.JsonSerializer.Serialize(result);
+            await _cache.SetStringAsync(cacheKey, jsonResult);
+
+            return Ok(result);  
         }
     }
 }

@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace LSETradeApi.Controllers
 {
@@ -9,10 +10,12 @@ namespace LSETradeApi.Controllers
     public class TradesController : ControllerBase
     {
         private readonly AppDbContext _context;
+ private readonly IDistributedCache _cache;
 
-        public TradesController(AppDbContext context)
+        public TradesController(AppDbContext context, IDistributedCache cache)
         {
             _context = context;
+            _cache = cache;
         }
 
         [HttpPost]
@@ -36,9 +39,13 @@ namespace LSETradeApi.Controllers
             
             };
 
+
         _context.lsetable.Add(trade);
             await _context.SaveChangesAsync();
 
+    await _cache.RemoveAsync("AllStockValues");
+    await _cache.RemoveAsync($"StockValue_{request.TickerSymbol}");
+    await _cache.RemoveAsync("ValuesByTickers_*");
             return Ok(new { status = "success", tradeId = trade.id });
         }
 

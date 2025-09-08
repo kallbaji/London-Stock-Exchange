@@ -9,6 +9,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(new LSEDAL.LSEDAL().ConnectionString));
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:6379"; 
+    options.InstanceName = "LSEProject_";
+});
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();

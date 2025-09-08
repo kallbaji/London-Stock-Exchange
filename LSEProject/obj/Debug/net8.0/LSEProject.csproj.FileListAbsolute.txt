@@ -46,3 +46,6 @@
 /Users/gaurishankarpandey/LSEProject/LSEProject/bin/Debug/net8.0/LSEDAL.dll
 /Users/gaurishankarpandey/LSEProject/LSEProject/bin/Debug/net8.0/LSEDAL.pdb
 /Users/gaurishankarpandey/LSEProject/LSEProject/obj/Debug/net8.0/LSEProject.sourcelink.json
+/Users/gaurishankarpandey/LSEProject/LSEProject/bin/Debug/net8.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject/bin/Debug/net8.0/StackExchange.Redis.dll

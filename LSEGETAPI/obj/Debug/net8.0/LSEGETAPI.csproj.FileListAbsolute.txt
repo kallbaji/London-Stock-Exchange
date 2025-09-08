@@ -46,3 +46,6 @@
 /Users/gaurishankarpandey/LSEProject/LSEGETAPI/obj/Debug/net8.0/LSEGETAPI.pdb
 /Users/gaurishankarpandey/LSEProject/LSEGETAPI/obj/Debug/net8.0/LSEGETAPI.genruntimeconfig.cache
 /Users/gaurishankarpandey/LSEProject/LSEGETAPI/obj/Debug/net8.0/ref/LSEGETAPI.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETAPI/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETAPI/bin/Debug/net8.0/StackExchange.Redis.dll
