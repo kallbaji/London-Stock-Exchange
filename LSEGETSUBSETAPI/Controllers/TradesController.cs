@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
-namespace LSETradeApi.Controllers
+namespace LSEGETSUBSETAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

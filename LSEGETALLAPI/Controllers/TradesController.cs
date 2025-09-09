@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace LSETradeApi.Controllers
+namespace LSEGETALLAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -25,7 +25,7 @@ namespace LSETradeApi.Controllers
         {
             var cacheKey = "AllStockValues";
             var cachedResult = await _cache.GetStringAsync(cacheKey);
-            if (cachedResult != null)
+            if (cachedResult != null && cachedResult != string.Empty)
             {
                 return Ok(cachedResult);
             }

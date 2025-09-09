@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c55ec9158665a39ff2065f528adea88ccd4d442")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e60f63c41c3b9e63e6aef81f075a9dad1dce7f78")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

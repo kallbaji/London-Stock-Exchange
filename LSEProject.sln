@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSEGETAPI", "LSEGETAPI\LSEG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSEDAL", "LSEDAL\LSEDAL.csproj", "{D49F011F-F0BA-41F6-8E73-B4E5367DDD96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LSEProject.Tests", "LSEProject.Tests\LSEProject.Tests.csproj", "{93E883FF-8364-499B-A574-62301289A4F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,18 @@ Global
 		{D49F011F-F0BA-41F6-8E73-B4E5367DDD96}.Release|x64.Build.0 = Release|Any CPU
 		{D49F011F-F0BA-41F6-8E73-B4E5367DDD96}.Release|x86.ActiveCfg = Release|Any CPU
 		{D49F011F-F0BA-41F6-8E73-B4E5367DDD96}.Release|x86.Build.0 = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|x64.Build.0 = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Debug|x86.Build.0 = Debug|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|x64.ActiveCfg = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|x64.Build.0 = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{93E883FF-8364-499B-A574-62301289A4F8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
