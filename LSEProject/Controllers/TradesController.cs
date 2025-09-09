@@ -33,6 +33,14 @@ namespace LSEPostTradeAPI.Controllers
             {
                 return BadRequest(new { status = "error", message = "Invalid trade data" });
             }
+
+            var brokerIdFromToken = User.Identity?.Name;
+
+   
+    if (brokerIdFromToken == null || brokerIdFromToken != request.BrokerId)
+    {
+        return Forbid();
+    }
             var trade = new LSETable
             {
 

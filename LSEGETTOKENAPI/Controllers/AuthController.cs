@@ -11,10 +11,12 @@ using Microsoft.EntityFrameworkCore;
 public class AuthController : ControllerBase
 {
       private readonly AppDbContext _context;
+ private readonly IConfiguration _configuration; 
 
-    public AuthController(AppDbContext context)
+    public AuthController(AppDbContext context, IConfiguration configuration)
     {
         _context = context;
+        _configuration = configuration;
     }
     [HttpPost("token")]
     public async Task<IActionResult> GenerateToken([FromBody] LoginTable model)
@@ -27,14 +29,19 @@ public class AuthController : ControllerBase
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, model.username)
-            };
+                        };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("A_Very_Long_Random_Secret_Key_1234567890"));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            
+            var issuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
+            var key = _configuration["Jwt:Key"];
+
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+            var creds = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                issuer: "LSEProjectAPI",
-                audience: "LSEProjectClient",
+                issuer: issuer,
+                audience: audience,
                 claims: claims,
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: creds);

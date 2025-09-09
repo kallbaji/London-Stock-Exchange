@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEGETSUBSETAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17c7056bdca2ff4028325dd90fce10d205989969")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67627fd6720d31bafee52200d049885acbdf753a")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEGETSUBSETAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEGETSUBSETAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
