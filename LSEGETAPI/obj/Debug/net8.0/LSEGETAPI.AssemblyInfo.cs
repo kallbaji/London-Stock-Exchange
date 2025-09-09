@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEGETAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67627fd6720d31bafee52200d049885acbdf753a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7030c02a2b4310f1cacdfa50784b8c33e3cba64")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEGETAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEGETAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

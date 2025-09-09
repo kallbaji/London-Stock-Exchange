@@ -8,9 +8,12 @@ using LSEDAL;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text; 
+using System.Text;
 using LSEProject_Controllers = LSEPostTradeAPI.Controllers;
+using LSEGETTOKENAPI;
 using StackExchange.Redis;
+using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net.Http.Json;
 namespace LSEProject.Tests
 {
     public class TradesControllerTests
@@ -98,33 +101,94 @@ namespace LSEProject.Tests
             var list = Assert.IsAssignableFrom<IEnumerable<object>>(okResult.Value);
             Assert.Empty(list);
         }
-    [Fact]
-public async Task PostTrade_DeletesAllValuesByTickersKeys()
+        
+
+        [Fact]
+        public async Task PostTrade_WithoutToken_ReturnsUnauthorized()
+        {
+            // Arrange
+            var appFactory = new WebApplicationFactory<Program>();
+            var client = appFactory.CreateClient();
+
+            var trade = new
+            {
+                TickerSymbol = "AAPL",
+                Price = 100,
+                Quantity = 10,
+                BrokerId = "BRK1"
+            };
+
+            // Act
+            var response = await client.PostAsJsonAsync("/api/trades/trades", trade);
+
+            // Assert
+            Assert.Equal(System.Net.HttpStatusCode.Unauthorized, response.StatusCode);
+        }
+[Fact]
+public async Task PostTrade_WithValidToken_ReturnsOk()
+{
+            // Arrange
+
+    var factory = new CustomTradesWebApplicationFactory<LSEProject.Program>();
+var client = factory.CreateClient();
+
+
+   var authclient = new CustomAuthWebApplicationFactory<LSEGETTOKENAPI.Program>();
+
+    var login = new { username = "youruser", password = "yourpassword" };
+    var tokenResponse = await authclient.CreateClient().PostAsJsonAsync("/api/auth/token", login);
+    var tokenObj = await tokenResponse.Content.ReadFromJsonAsync<TokenResponse>();
+    var token = tokenObj?.token;
+
+    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+// Mock Redis
+            var mockRedis = new Mock<IConnectionMultiplexer>();
+            var mockServer = new Mock<IServer>();
+            var mockDb = new Mock<IDatabase>();
+
+            // Setup server.Keys to return some fake keys
+            var keys = new RedisKey[] { "ValuesByTickers_A", "ValuesByTickers_B" };
+            mockServer.Setup(s => s.Keys(It.IsAny<int>(), "ValuesByTickers_*", 10, 0, 0, CommandFlags.None))
+                .Returns(keys);
+
+            mockRedis.Setup(r => r.GetServer("localhost:6379", null)).Returns(mockServer.Object);
+            mockRedis.Setup(r => r.GetDatabase(It.IsAny<int>(), It.IsAny<object>())).Returns(mockDb.Object);
+
+    var trade = new
+    {
+        TickerSymbol = "AAPL",
+        Price = 100,
+        Quantity = 10,
+        BrokerId = "youruser"
+    };
+
+    // Act
+    var response = await client.PostAsJsonAsync("/api/trades/trades", trade);
+
+            // Assert
+    foreach (var key in mockServer.Object.Keys(pattern: "ValuesByTickers_*"))
+            {
+                mockDb.Verify(db => db.KeyDeleteAsync(key, CommandFlags.None), Times.Once);
+            }
+            factory.MockCache.Verify(c => c.RemoveAsync(
+                "AllStockValues",
+                It.IsAny<CancellationToken>()), Times.Once);
+            factory.MockCache.Verify(c => c.RemoveAsync(
+                $"StockValue_{trade.TickerSymbol}",
+                It.IsAny<CancellationToken>()), Times.Once);
+    Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
+}
+
+[Fact]
+public async Task PostTrade_WithInvalidToken_ReturnsUnauthorized()
 {
     // Arrange
-    var options = new DbContextOptionsBuilder<AppDbContext>()
-        .UseInMemoryDatabase("TestDb_DeleteKeys")
-        .Options;
-    using var context = new AppDbContext(options);
+    var appFactory = new WebApplicationFactory<Program>();
+    var client = appFactory.CreateClient();
 
-    var mockCache = new Mock<IDistributedCache>();
+    client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "invalidtoken");
 
-    // Mock Redis
-    var mockRedis = new Mock<IConnectionMultiplexer>();
-    var mockServer = new Mock<IServer>();
-    var mockDb = new Mock<IDatabase>();
-
-    // Setup server.Keys to return some fake keys
-    var keys = new RedisKey[] { "ValuesByTickers_A", "ValuesByTickers_B" };
-    mockServer.Setup(s => s.Keys(It.IsAny<int>(), "ValuesByTickers_*", 10, 0, 0, CommandFlags.None))
-        .Returns(keys);
-
-    mockRedis.Setup(r => r.GetServer("localhost:6379", null)).Returns(mockServer.Object);
-    mockRedis.Setup(r => r.GetDatabase(It.IsAny<int>(), It.IsAny<object>())).Returns(mockDb.Object);
-
-    var controller = new LSEProject_Controllers.TradesController(context, mockCache.Object, mockRedis.Object);
-
-    var request = new TradeRequest
+    var trade = new
     {
         TickerSymbol = "AAPL",
         Price = 100,
@@ -133,14 +197,14 @@ public async Task PostTrade_DeletesAllValuesByTickersKeys()
     };
 
     // Act
-    await controller.PostTrade(request);
+    var response = await client.PostAsJsonAsync("/api/trades/trades", trade);
 
     // Assert
-    foreach (var key in mockServer.Object.Keys(pattern: "ValuesByTickers_*"))
-    {
-        mockDb.Verify(db => db.KeyDeleteAsync(key, CommandFlags.None), Times.Once);
-    }
+    Assert.Equal(System.Net.HttpStatusCode.Unauthorized, response.StatusCode);
 }
-
+        public class TokenResponse
+        {
+            public required string token { get; set; }
+        }
     }
 }

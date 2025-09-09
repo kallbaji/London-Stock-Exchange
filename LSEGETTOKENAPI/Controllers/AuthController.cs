@@ -36,7 +36,7 @@ public class AuthController : ControllerBase
             var audience = _configuration["Jwt:Audience"];
             var key = _configuration["Jwt:Key"];
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+            var securityKey = key != null ? new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key)) : null;
             var creds = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
