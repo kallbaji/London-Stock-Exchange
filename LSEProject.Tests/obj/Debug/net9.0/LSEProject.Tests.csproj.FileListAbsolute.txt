@@ -134,3 +134,13 @@
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEProject
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEProject.dll
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEProject.pdb
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Logging.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEAuth.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEAuth.pdb

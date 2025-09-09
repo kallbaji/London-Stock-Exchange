@@ -1,0 +1,13 @@
+/Users/gaurishankarpandey/LSEProject/LSEAuth/bin/Debug/net9.0/LSEAuth.deps.json
+/Users/gaurishankarpandey/LSEProject/LSEAuth/bin/Debug/net9.0/LSEAuth.dll
+/Users/gaurishankarpandey/LSEProject/LSEAuth/bin/Debug/net9.0/LSEAuth.pdb
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.csproj.AssemblyReference.cache
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.AssemblyInfoInputs.cache
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.AssemblyInfo.cs
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.csproj.CoreCompileInputs.cache
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.sourcelink.json
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.dll
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/refint/LSEAuth.dll
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/LSEAuth.pdb
+/Users/gaurishankarpandey/LSEProject/LSEAuth/obj/Debug/net9.0/ref/LSEAuth.dll

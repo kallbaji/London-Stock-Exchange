@@ -1,7 +1,6 @@
 {
     "version": "0.2.0",
     "configurations": [
-
         {
             "name": "LSEGetAllAPI",
             "type": "coreclr",
@@ -10,7 +9,10 @@
             "program": "${workspaceFolder}/LSEGetAllAPI/bin/Debug/net8.0/LSEGetAllAPI.dll",
             "args": [],
             "cwd": "${workspaceFolder}/LSEGetAllAPI",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         },
         {
             "name": "LSEGETAPI",
@@ -20,7 +22,10 @@
             "program": "${workspaceFolder}/LSEGETAPI/bin/Debug/net8.0/LSEGETAPI.dll",
             "args": [],
             "cwd": "${workspaceFolder}/LSEGETAPI",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         },
         {
             "name": "LSEGETSUBSETAPI",
@@ -30,7 +35,10 @@
             "program": "${workspaceFolder}/LSEGETSUBSETAPI/bin/Debug/net8.0/LSEGETSUBSETAPI.dll",
             "args": [],
             "cwd": "${workspaceFolder}/LSEGETSUBSETAPI",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         },
         {
             "name": "LSEProject",
@@ -40,7 +48,23 @@
             "program": "${workspaceFolder}/LSEProject/bin/Debug/net8.0/LSEProject.dll",
             "args": [],
             "cwd": "${workspaceFolder}/LSEProject",
-            "stopAtEntry": false
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": "LSEGETTOKENAPI",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/LSEGETTOKENAPI/bin/Debug/net8.0/LSEGETTOKENAPI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/LSEGETTOKENAPI",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
         }
     ],
     "compounds": [
@@ -50,7 +74,8 @@
                 "LSEGetAllAPI",
                 "LSEGETAPI",
                 "LSEGETSUBSETAPI",
-                "LSEProject"
+                "LSEProject",
+                "LSEGETTOKENAPI"
             ]
         }
     ]

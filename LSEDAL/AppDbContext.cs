@@ -8,11 +8,13 @@ public class AppDbContext : DbContext
 
     public DbSet<LSETable> lsetable { get; set; }
 
-    public int InsertTrade(LSETable trade)
-    {
-        lsetable.Add(trade);
-        return SaveChanges();
-    }
+    public DbSet<LoginTable> logintable { get; set; }   
+}
+public class LoginTable
+{
+    [Key]
+    public required string username { get; set; }
+    public required  string password { get; set; }
 }
 
 public class LSETable
@@ -34,9 +36,9 @@ public class TickerListRequest
         public required List<string> Tickers { get; set; }
     }
 public class TradeRequest
-    {
-        public string? TickerSymbol { get; set; }
-        public decimal Price { get; set; }
-        public decimal Quantity { get; set; }
-        public string? BrokerId { get; set; }
-    }
+{
+    public string? TickerSymbol { get; set; }
+    public decimal Price { get; set; }
+    public decimal Quantity { get; set; }
+    public string? BrokerId { get; set; }
+}

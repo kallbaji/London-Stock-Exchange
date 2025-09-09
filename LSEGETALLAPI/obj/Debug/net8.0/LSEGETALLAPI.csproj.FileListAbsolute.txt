@@ -49,3 +49,13 @@
 /Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
 /Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
 /Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/StackExchange.Redis.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/LSEAuth.dll
+/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/bin/Debug/net8.0/LSEAuth.pdb
