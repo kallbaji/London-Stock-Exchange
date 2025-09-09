@@ -225,6 +225,188 @@
         }
       }
     },
+    "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj",
+        "projectName": "LSEGETAPI",
+        "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj",
+        "packagesPath": "/Users/gaurishankarpandey/.nuget/packages/",
+        "outputPath": "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gaurishankarpandey/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj"
+              },
+              "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj",
+        "projectName": "LSEGETSUBSETAPI",
+        "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj",
+        "packagesPath": "/Users/gaurishankarpandey/.nuget/packages/",
+        "outputPath": "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/gaurishankarpandey/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj"
+              },
+              "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/gaurishankarpandey/LSEProject/LSEGETTOKENAPI/LSEGETTOKENAPI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -334,11 +516,20 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj"
+              },
               "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj": {
                 "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj"
               },
               "/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/LSEGETALLAPI.csproj": {
                 "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/LSEGETALLAPI.csproj"
+              },
+              "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj"
+              },
+              "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj": {
+                "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj"
               },
               "/Users/gaurishankarpandey/LSEProject/LSEGETTOKENAPI/LSEGETTOKENAPI.csproj": {
                 "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETTOKENAPI/LSEGETTOKENAPI.csproj"

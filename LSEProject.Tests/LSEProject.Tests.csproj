@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../LSEAuth/LSEAuth.csproj" />
+    <ProjectReference Include="../LSEGETAPI/LSEGETAPI.csproj" />
+    <ProjectReference Include="../LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj" />
     <ProjectReference Include="../LSEGETTOKENAPI/LSEGETTOKENAPI.csproj" />
     <ProjectReference Include="..\LSEProject\LSEProject.csproj" />
     <ProjectReference Include="..\LSEDAL\LSEDAL.csproj" />

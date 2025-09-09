@@ -37,8 +37,11 @@
     ".NETCoreApp,Version=v9.0": {
       "LSEProject.Tests/1.0.0": {
         "dependencies": {
+          "LSEAuth": "1.0.0",
           "LSEDAL": "1.0.0",
           "LSEGETALLAPI": "1.0.0",
+          "LSEGETAPI": "1.0.0",
+          "LSEGETSUBSETAPI": "1.0.0",
           "LSEGETTOKENAPI": "1.0.0",
           "LSEProject": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Testing": "9.0.9",
@@ -1540,6 +1543,46 @@
         },
         "compile": {
           "LSEGETALLAPI.dll": {}
+        }
+      },
+      "LSEGETAPI/1.0.0": {
+        "dependencies": {
+          "LSEAuth": "1.0.0",
+          "LSEDAL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.8",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.8",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+        },
+        "runtime": {
+          "LSEGETAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "LSEGETAPI.dll": {}
+        }
+      },
+      "LSEGETSUBSETAPI/1.0.0": {
+        "dependencies": {
+          "LSEAuth": "1.0.0",
+          "LSEDAL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.8",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.8",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+        },
+        "runtime": {
+          "LSEGETSUBSETAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "LSEGETSUBSETAPI.dll": {}
         }
       },
       "LSEGETTOKENAPI/1.0.0": {
@@ -3727,6 +3770,16 @@
       "sha512": ""
     },
     "LSEGETALLAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LSEGETAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LSEGETSUBSETAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

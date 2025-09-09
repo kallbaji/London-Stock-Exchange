@@ -2,6 +2,8 @@
   "LSEAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEAuth",
   "LSEDAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEDAL",
   "LSEGETALLAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEGETALLAPI",
+  "LSEGETAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEGETAPI",
+  "LSEGETSUBSETAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEGETSUBSETAPI",
   "LSEGETTOKENAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEGETTOKENAPI",
   "LSEProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/gaurishankarpandey\/LSEProject\/LSEProject"
 }

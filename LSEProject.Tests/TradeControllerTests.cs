@@ -14,10 +14,113 @@ using LSEGETTOKENAPI;
 using StackExchange.Redis;
 using Microsoft.AspNetCore.Mvc.Testing;
 using System.Net.Http.Json;
+using LSEGETAPI_Controllers= LSEGETAPI.Controllers;
+using LSEGETSUBSETAPI_controllers = LSEGETSUBSETAPI.Controllers;
+using Microsoft.Extensions.DependencyInjection;
 namespace LSEProject.Tests
 {
     public class TradesControllerTests
     {
+        [Fact]
+    public async Task GetTradeByTicker_ReturnsOkResult_WithCachedValue()
+    {
+        // Arrange
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseInMemoryDatabase(databaseName: "TestDb_GETAPI")
+            .Options;
+        using var context = new AppDbContext(options);
+
+        var mockCache = new Mock<IDistributedCache>();
+        var cachedString = "cached trade";
+        mockCache.Setup(c => c.GetAsync("StockValue_AAPL", It.IsAny<CancellationToken>()))
+            .ReturnsAsync(Encoding.UTF8.GetBytes(cachedString));
+
+        var controller = new LSEGETAPI_Controllers.TradesController(context, mockCache.Object);
+
+        // Act
+        var result = await controller.GetStockValue("AAPL");
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(cachedString, okResult.Value);
+    }
+
+   [Fact]
+public async Task GetStockValue_WithDbValueAndSetsCache_ReturnsOk()
+{
+            // Arrange
+            var factory = new CustomTradesWebApplicationFactory<LSEGETAPI.Program>();
+
+    var client = factory.CreateClient();
+
+    //Simulate cache miss
+   factory.MockCache.Setup(c => c.GetAsync("StockValue_AAPL", It.IsAny<CancellationToken>()))
+       .ReturnsAsync((byte[]?)null);
+
+    // Act
+    var response = await client.GetAsync("/api/trades/stocks/value/AAPL");
+
+    // Assert
+    Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode);
+
+    // Optionally, check the response content
+    var json = await response.Content.ReadAsStringAsync();
+    Assert.Contains("AAPL", json);
+    Assert.Contains("150.00", json);
+
+    // Verify cache was set
+    factory.MockCache.Verify(c => c.SetAsync(
+       "StockValue_AAPL",
+       It.IsAny<byte[]>(),
+        It.IsAny<DistributedCacheEntryOptions>(),
+       It.IsAny<CancellationToken>()), Times.Once);
+}
+        [Fact]
+    public async Task GetTradesByTickers_ReturnsOkResult_WithCachedValue()
+    {
+        // Arrange
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseInMemoryDatabase(databaseName: "TestDb_SUBSETAPI")
+            .Options;
+        using var context = new AppDbContext(options);
+
+        var mockCache = new Mock<IDistributedCache>();
+        var cachedString = "cached subset";
+        mockCache.Setup(c => c.GetAsync("ValuesByTickers_AAPL_MSFT", It.IsAny<CancellationToken>()))
+            .ReturnsAsync(Encoding.UTF8.GetBytes(cachedString));
+
+        var controller = new LSEGETSUBSETAPI_controllers.TradesController(context, mockCache.Object);
+
+        // Act
+        var result = await controller.GetValuesByTickers(new TickerListRequest() { Tickers = new List<string>(){ "AAPL", "MSFT" } });
+
+        // Assert
+        var okResult = Assert.IsType<OkObjectResult>(result);
+        Assert.Equal(cachedString, okResult.Value);
+    }
+
+    [Fact]
+    public async Task GetTradesByTickers_ReturnsOkResult_WithDbValue_AndSetsCache()
+    {
+            // Arrange
+            var factory = new CustomTradesWebApplicationFactory<LSEGETSUBSETAPI.Program>();
+        var client = factory.CreateClient();
+       factory.MockCache.Setup(c => c.GetAsync("ValuesByTickers_AAPL_MSFT", It.IsAny<CancellationToken>()))
+           .ReturnsAsync((byte[]?)null);
+       factory.MockCache.Setup(c => c.GetAsync("ValuesByTickers_MSFT_AAPL", It.IsAny<CancellationToken>()))
+        .ReturnsAsync((byte[]?)null);
+
+            // Act
+        var result = await client.PostAsJsonAsync("/api/trades/stocks/values-by-tickers", new TickerListRequest() { Tickers = new List<string>() { "AAPL", "MSFT" } });
+        // Assert
+        Assert.Equal(System.Net.HttpStatusCode.OK, result.StatusCode);
+
+        factory.MockCache.Verify(c => c.SetAsync(
+            It.Is<string>(key => key == "ValuesByTickers_AAPL_MSFT" || key == "ValuesByTickers_MSFT_AAPL"),
+            It.IsAny<byte[]>(),
+            It.IsAny<DistributedCacheEntryOptions>(),
+            default), Times.Once);
+    }
         [Fact]
         public async Task GetAllStockValues_ReturnsOkResult_WithCachedValue()
         {

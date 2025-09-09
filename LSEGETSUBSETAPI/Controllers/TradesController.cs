@@ -24,14 +24,14 @@ namespace LSEGETSUBSETAPI.Controllers
 
         
 
-        [HttpGet("stocks/values-by-tickers")]
+        [HttpPost("stocks/values-by-tickers")]
         public async Task<IActionResult> GetValuesByTickers([FromBody] TickerListRequest request)
         {
             if (request == null || request.Tickers == null || !request.Tickers.Any())
             {
                 return BadRequest(new { status = "error", message = "Invalid ticker list" });
             }
-            var cacheKey = $"ValuesByTickers_{string.Join(",", request.Tickers)}";
+            var cacheKey = $"ValuesByTickers_{string.Join("_", request.Tickers)}";
             var cachedResult = await _cache.GetStringAsync(cacheKey);
             if (cachedResult != null)
             {

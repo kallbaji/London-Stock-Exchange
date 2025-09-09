@@ -452,3 +452,15 @@
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETTOKENAPI
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETTOKENAPI.dll
 /Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETTOKENAPI.pdb
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI.deps.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI.runtimeconfig.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI.staticwebassets.endpoints.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI.deps.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI.runtimeconfig.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI.staticwebassets.endpoints.json
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI.dll
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETAPI.pdb
+/Users/gaurishankarpandey/LSEProject/LSEProject.Tests/bin/Debug/net9.0/LSEGETSUBSETAPI.pdb

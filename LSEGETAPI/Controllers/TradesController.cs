@@ -36,11 +36,18 @@ namespace LSEGETAPI.Controllers
                 return Ok(cachedResult);
             }
 
-            var avgPrice = await _context.lsetable
-                .Where(t => t.tickersymbol == tickerSymbol)
-                .AverageAsync(t => t.price);
- var jsonResult = System.Text.Json.JsonSerializer.Serialize(avgPrice.ToString("F2"));
-                await _cache.SetStringAsync(cacheKey, jsonResult);
+             var trades = await _context.lsetable
+        .Where(t => t.tickersymbol == tickerSymbol)
+        .ToListAsync();
+
+    if (!trades.Any())
+    {
+        return NotFound(new { status = "error", message = "No trades found for this ticker symbol" });
+    }
+
+    var avgPrice = trades.Average(t => t.price);
+    var jsonResult = System.Text.Json.JsonSerializer.Serialize(avgPrice.ToString("F2"));
+             await _cache.SetStringAsync(cacheKey, jsonResult);
             
             return Ok(new { tickerSymbol, averagePrice = avgPrice.ToString("F2") });
         }

@@ -1493,6 +1493,50 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "LSEGETAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "LSEAuth": "1.0.0",
+          "LSEDAL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.8",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.8",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+        },
+        "compile": {
+          "bin/placeholder/LSEGETAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LSEGETAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "LSEGETSUBSETAPI/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "LSEAuth": "1.0.0",
+          "LSEDAL": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.8",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.8",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+        },
+        "compile": {
+          "bin/placeholder/LSEGETSUBSETAPI.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LSEGETSUBSETAPI.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "LSEGETTOKENAPI/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3476,6 +3520,16 @@
       "path": "../LSEGETALLAPI/LSEGETALLAPI.csproj",
       "msbuildProject": "../LSEGETALLAPI/LSEGETALLAPI.csproj"
     },
+    "LSEGETAPI/1.0.0": {
+      "type": "project",
+      "path": "../LSEGETAPI/LSEGETAPI.csproj",
+      "msbuildProject": "../LSEGETAPI/LSEGETAPI.csproj"
+    },
+    "LSEGETSUBSETAPI/1.0.0": {
+      "type": "project",
+      "path": "../LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj",
+      "msbuildProject": "../LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj"
+    },
     "LSEGETTOKENAPI/1.0.0": {
       "type": "project",
       "path": "../LSEGETTOKENAPI/LSEGETTOKENAPI.csproj",
@@ -3489,8 +3543,11 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "LSEAuth >= 1.0.0",
       "LSEDAL >= 1.0.0",
       "LSEGETALLAPI >= 1.0.0",
+      "LSEGETAPI >= 1.0.0",
+      "LSEGETSUBSETAPI >= 1.0.0",
       "LSEGETTOKENAPI >= 1.0.0",
       "LSEProject >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 9.0.9",
@@ -3527,11 +3584,20 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj": {
+              "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEAuth/LSEAuth.csproj"
+            },
             "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj": {
               "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEDAL/LSEDAL.csproj"
             },
             "/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/LSEGETALLAPI.csproj": {
               "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETALLAPI/LSEGETALLAPI.csproj"
+            },
+            "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj": {
+              "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETAPI/LSEGETAPI.csproj"
+            },
+            "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj": {
+              "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETSUBSETAPI/LSEGETSUBSETAPI.csproj"
             },
             "/Users/gaurishankarpandey/LSEProject/LSEGETTOKENAPI/LSEGETTOKENAPI.csproj": {
               "projectPath": "/Users/gaurishankarpandey/LSEProject/LSEGETTOKENAPI/LSEGETTOKENAPI.csproj"
