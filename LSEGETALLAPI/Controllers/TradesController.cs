@@ -1,7 +1,7 @@
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Distributed;
+using LSEGETALLAPI.Models; // Add this using
 
 namespace LSEGETALLAPI.Controllers
 {
@@ -18,34 +18,36 @@ namespace LSEGETALLAPI.Controllers
             _cache = cache;
         }
 
-        
-
         [HttpGet("stocks/values")]
         public async Task<IActionResult> GetAllStockValues()
         {
             var cacheKey = "AllStockValues";
             var cachedResult = await _cache.GetStringAsync(cacheKey);
-            if (cachedResult != null && cachedResult != string.Empty)
+            if (!string.IsNullOrEmpty(cachedResult))
             {
-                return Ok(cachedResult);
+                // Deserialize cached JSON to DTO list
+                var cachedList = System.Text.Json.JsonSerializer.Deserialize<List<StockValueDto>>(cachedResult);
+                return Ok(cachedList);
             }
 
             var result = await _context.lsetable
                 .GroupBy(t => t.tickersymbol)
-                .Select(g => new
+                .Select(g => new StockValueDto
                 {
                     tickerSymbol = g.Key,
                     averagePrice = g.Average(t => t.price).ToString("F2")
                 })
                 .ToListAsync();
+
             if (result != null)
             {
                 var jsonResult = System.Text.Json.JsonSerializer.Serialize(result);
-                await _cache.SetStringAsync(cacheKey, jsonResult);
+                await _cache.SetStringAsync(cacheKey, jsonResult, new DistributedCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5) // Set cache expiry
+                });
             }
             return Ok(result);
         }
-
-        
     }
 }

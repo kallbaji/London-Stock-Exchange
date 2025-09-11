@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8a3605f96c396788d7fe1cbefcc82f4cfcb8eb0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+681142128bd4a3a3cd6a67131d02f27364d81c17")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEGETALLAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
