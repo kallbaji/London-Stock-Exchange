@@ -1,4 +1,5 @@
 
+using LSEProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -25,22 +26,17 @@ namespace LSEPostTradeAPI.Controllers
         [HttpPost("trades")]
         public async Task<IActionResult> PostTrade([FromBody] TradeRequest request)
         {
-            if (request == null ||
-                string.IsNullOrWhiteSpace(request.TickerSymbol) ||
-                string.IsNullOrWhiteSpace(request.BrokerId) ||
-                request.Price <= 0 ||
-                request.Quantity <= 0)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(new { status = "error", message = "Invalid trade data" });
+                return BadRequest(ModelState);
             }
 
             var brokerIdFromToken = User.Identity?.Name;
 
-   
-    if (brokerIdFromToken == null || brokerIdFromToken != request.BrokerId)
-    {
-        return Forbid();
-    }
+            if (brokerIdFromToken == null || brokerIdFromToken != request.BrokerId)
+            {
+                return Forbid();
+            }
             var trade = new LSETable
             {
 

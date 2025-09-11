@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSEAuth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3132811b303e05ca1425495764574c4c33acc7b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8a3605f96c396788d7fe1cbefcc82f4cfcb8eb0")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSEAuth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSEAuth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
